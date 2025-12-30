@@ -9,13 +9,20 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: radial-gradient(circle at 20% 10%, #141414, #000000 70%);
+      background: #000;
       color: #f0f0f0;
     }
 
+    /* ===== HERO HEADER WITH BACKGROUND IMAGE ===== */
     header {
-      background: radial-gradient(circle at top left, #1c1c1c, #000000 65%);
-      padding: 100px 20px 110px;
+      background-image:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("1.jpg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      padding: 120px 20px 140px;
       text-align: center;
     }
 
@@ -29,7 +36,7 @@
     }
 
     header p {
-      color: #dcdcdc;
+      color: #e0e0e0;
       font-size: 1.2rem;
       line-height: 1.8;
       max-width: 850px;
@@ -66,174 +73,3 @@
 
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .product {
-      background: #ffffff;
-      color: #000;
-      border-radius: 22px;
-      padding: 22px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.2);
-    }
-
-    .product img {
-      width: 100%;
-      border-radius: 15px;
-      margin-bottom: 15px;
-    }
-
-    .price {
-      color: #bfa14a;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .availability {
-      font-size: 0.9rem;
-      margin-bottom: 15px;
-    }
-
-    .order-btn {
-      display: inline-block;
-      padding: 12px 22px;
-      background: #25D366;
-      color: #000;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: bold;
-    }
-
-    .about, .policy {
-      text-align: center;
-      line-height: 1.9;
-      font-weight: 500;
-      color: #f0f0f0;
-    }
-
-    footer {
-      background: #000;
-      padding: 30px 20px;
-      text-align: center;
-      color: #bfa14a;
-      font-size: 0.95rem;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>HNK STORES</h1>
-
-  <p>
-    Welcome to <strong>HNK Stores</strong> — where luxury meets precision.
-    Explore premium watches crafted for daily styling and timeless elegance.
-    Our fragrance collection is arriving soon to complete the experience.
-  </p>
-
-  <p style="margin-top:20px; letter-spacing:3px; color:#e6c87b;">
-    OFFICIAL LAUNCH • 1 JANUARY 2026
-  </p>
-
-  <a class="cta" href="https://instagram.com/hnk_store" target="_blank">
-    Follow on Instagram
-  </a>
-</header>
-
-<section>
-  <h2 class="section-title">Daily Styling Watches</h2>
-
-  <div class="products">
-    <div class="product">
-      <img src="1.jpg" alt="Daily Watch">
-      <h3>Minimal Everyday Watch</h3>
-      <p><strong>Product Code:</strong> HNK-DW-001</p>
-      <div class="price">PKR — Confirm via WhatsApp</div>
-      <div class="availability">Available on Order • Quantity Flexible</div>
-
-      <a class="order-btn"
-         href="https://wa.me/923435266919?text=I%20want%20to%20order%20HNK-DW-001"
-         target="_blank">
-         Order on WhatsApp
-      </a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2 class="section-title">Luxury Watch Collection</h2>
-
-  <div class="products">
-    <div class="product">
-      <img src="5.jpg" alt="Luxury Watch">
-      <h3>Classic Gold Dial Watch</h3>
-      <p><strong>Product Code:</strong> HNK-LX-001</p>
-      <div class="price">PKR — Confirm via WhatsApp</div>
-      <div class="availability">Available on Order</div>
-
-      <a class="order-btn"
-         href="https://wa.me/923435266919?text=I%20want%20to%20order%20HNK-LX-001"
-         target="_blank">
-         Order on WhatsApp
-      </a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2 class="section-title">Perfume Collection</h2>
-
-  <div style="text-align:center; font-size:2.5rem; font-weight:800;
-              background: linear-gradient(90deg,#9fd3c7,#e6c87b,#ffffff);
-              -webkit-background-clip:text;
-              -webkit-text-fill-color:transparent;">
-    COMING SOON<br>
-    <span style="font-size:1.2rem;">Launching 1 January 2026</span>
-  </div>
-</section>
-
-<section class="about">
-  <h2 class="section-title">About HNK Stores</h2>
-  <p>
-    HNK Stores is a luxury brand focused on premium watches.
-    We do not hold stock currently — all orders are confirmed via WhatsApp
-    with flexible quantities and personalized service.
-  </p>
-</section>
-
-<section class="policy">
-  <h2 class="section-title">Payment, Delivery & Complaints</h2>
-  <p>
-    Delivery charges are paid in advance.<br>
-    Product payment is finalized after confirmation.<br><br>
-    Complaints & support:<br>
-    <strong>h123kayani1@gmail.com</strong>
-  </p>
-</section>
-
-<section>
-  <h2 class="section-title">Place Your Order</h2>
-
-  <p style="text-align:center; max-width:700px; margin:auto;">
-    Once you select your product, contact us on WhatsApp with the product code.
-    Our team will assist you personally.
-  </p>
-
-  <div style="text-align:center; margin-top:30px;">
-    <a class="cta" href="https://wa.me/923435266919" target="_blank">
-      Order on WhatsApp
-    </a>
-  </div>
-</section>
-
-<footer>
-  © 2026 HNK Stores • WhatsApp: +92 343 5266919 • Instagram: @hnk_store
-</footer>
-
-</body>
-</html>
-
-
-
