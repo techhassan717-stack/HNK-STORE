@@ -6,7 +6,6 @@
 <title>HNK Stores</title>
 
 <style>
-/* ===== BASIC RESET ===== */
 * {
   box-sizing: border-box;
 }
@@ -18,17 +17,16 @@ body {
   color: #fff;
 }
 
-/* ===== HERO SECTION ===== */
+/* HERO */
 header {
-  min-height: 100vh;
-  min-height: 100svh; /* mobile fix */
+  height: calc(var(--vh, 1vh) * 100);
 
   background-image:
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url("1.jpg.jpg");
 
   background-size: cover;
-  background-position: center top; /* image fixed */
+  background-position: center top;
   background-repeat: no-repeat;
 
   display: flex;
@@ -39,7 +37,7 @@ header {
   padding: 20px;
 }
 
-/* ===== TEXT ===== */
+/* TEXT */
 header h1 {
   font-size: 3rem;
   letter-spacing: 6px;
@@ -52,10 +50,9 @@ header p {
   margin: auto;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #ffffff;
 }
 
-/* ===== BUTTON ===== */
+/* BUTTON */
 .cta {
   display: inline-block;
   margin-top: 30px;
@@ -67,10 +64,10 @@ header p {
   font-weight: bold;
 }
 
-/* ===== MOBILE OPTIMIZATION ===== */
+/* MOBILE TEXT */
 @media (max-width: 768px) {
   header h1 {
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     letter-spacing: 4px;
   }
 
@@ -87,15 +84,23 @@ header p {
   <div>
     <h1>HNK STORES</h1>
     <p>
-      Welcome to HNK Stores — premium watches crafted for daily style
-      and timeless elegance.
+      Premium watches crafted for daily style and timeless elegance.
     </p>
-
     <a class="cta" href="https://wa.me/923435266919" target="_blank">
       Order on WhatsApp
     </a>
   </div>
 </header>
+
+<script>
+/* ✅ REAL MOBILE HEIGHT FIX */
+function setVh() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+setVh();
+window.addEventListener('resize', setVh);
+</script>
 
 </body>
 </html>
