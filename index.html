@@ -1,75 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HNK Stores | Luxury Watches</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HNK Stores | Luxury Watches</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #000;
-      color: #f0f0f0;
-    }
+<style>
+/* ===== RESET ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #000;
+  color: #fff;
+}
 
-    /* ===== HERO HEADER WITH BACKGROUND IMAGE ===== */
-    header {
-      background-image:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-        url("1.jpg.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+/* ===== HERO HEADER ===== */
+header {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url("./1.jpg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-      padding: 120px 20px 140px;
-      text-align: center;
-    }
+  padding: 120px 20px 140px;
+  text-align: center;
+}
 
-    header h1 {
-      font-size: 3.8rem;
-      letter-spacing: 7px;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg,#8a6b2f,#e6c87b,#bfa14a);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+header h1 {
+  font-size: 3.6rem;
+  letter-spacing: 6px;
+  margin-bottom: 20px;
+  color: #e6c87b;
+}
 
-    header p {
-      color: #e0e0e0;
-      font-size: 1.2rem;
-      line-height: 1.8;
-      max-width: 850px;
-      margin: auto;
-    }
+header p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: auto;
+  color: #ffffff;
+}
 
-    .cta {
-      margin-top: 40px;
-      display: inline-block;
-      padding: 14px 32px;
-      background: linear-gradient(90deg,#25D366,#128C7E);
-      color: #000;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-    }
+.launch {
+  margin-top: 20px;
+  letter-spacing: 3px;
+  color: #f1d58a;
+}
 
-    section {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: auto;
-      background: radial-gradient(circle at top left, #1c1c1c, #000000 65%);
-    }
+.cta {
+  margin-top: 40px;
+  display: inline-block;
+  padding: 14px 34px;
+  background: #25D366;
+  color: #000;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
 
-    .section-title {
-      text-align: center;
-      font-size: 2.4rem;
-      margin-bottom: 40px;
-      letter-spacing: 3px;
-      background: linear-gradient(90deg,#e6c87b,#bfa14a,#ffffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+/* ===== SECTIONS ===== */
+section {
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
 
-    .products {
-      display: grid;
+.section-title {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+  color: #e6c87b;
+}
+
+/* ===== PRODUCTS ===== */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.product {
+  background: #ffffff;
+  color: #000;
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.price {
+  color: #bfa14a;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.availability {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.order-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #25D366;
+  color: #000;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+/* ===== TEXT SECTIONS ===== */
+.about, .policy {
+  text-align: center;
+  line-height: 1.9;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #000;
+  padding: 30px 20px;
+  text-align: center;
+  color: #e6c87b;
+  font-size: 0.95rem;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>HNK STORES</h1>
+
+  <p>
+    Welcome to <strong>HNK Stores</strong> — where luxury meets precision.
+    Explore premium watches crafted for daily styling and timeless elegance.
+    Our fragrance collection is arriving soon to complete the experience.
+  </p>
+
+  <p class="launch">OFFICIAL LAUNCH • 1 JANUARY 2026</p>
+
+  <a class="cta" href="https://instagram.com/hnk_store" target="_
