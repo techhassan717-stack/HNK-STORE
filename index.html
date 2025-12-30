@@ -17,16 +17,16 @@ body {
   color: #fff;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 header {
-  height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
 
   background-image:
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
     url("1.jpg.jpg");
 
-  background-size: cover;
-  background-position: center top;
+  background-size: cover;        /* desktop */
+  background-position: center;
   background-repeat: no-repeat;
 
   display: flex;
@@ -64,8 +64,14 @@ header p {
   font-weight: bold;
 }
 
-/* MOBILE TEXT */
+/* ===== MOBILE FIX ===== */
 @media (max-width: 768px) {
+  header {
+    min-height: 100svh;
+    background-size: contain;    /* 🔥 SHOW FULL IMAGE */
+    background-position: top;
+  }
+
   header h1 {
     font-size: 2.2rem;
     letter-spacing: 4px;
@@ -91,16 +97,6 @@ header p {
     </a>
   </div>
 </header>
-
-<script>
-/* ✅ REAL MOBILE HEIGHT FIX */
-function setVh() {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-setVh();
-window.addEventListener('resize', setVh);
-</script>
 
 </body>
 </html>
