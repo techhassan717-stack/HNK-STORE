@@ -23,11 +23,12 @@ header {
   min-height: 100vh;
   min-height: 100svh;
 
+  /* 💻 DESKTOP IMAGE */
   background-image:
     linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("Black Gold Elegant Luxury Watch Shop Logo.jpg");
+    url("BG.jpg");
 
-  background-size: contain; /* SHOW FULL IMAGE */
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -37,6 +38,19 @@ header {
   text-align: center;
 
   padding: 20px;
+}
+
+/* 📱 MOBILE IMAGE */
+@media (max-width: 768px) {
+  header {
+    background-image:
+      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+      url("Black Gold Elegant Luxury Watch Shop Logo.jpg");
+
+    background-size: contain; /* FULL IMAGE ON PHONE */
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
 
 /* ===== TEXT ===== */
@@ -52,7 +66,6 @@ header p {
   margin: auto;
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #ffffff;
 }
 
 /* ===== BUTTON ===== */
@@ -67,7 +80,7 @@ header p {
   font-weight: bold;
 }
 
-/* ===== MOBILE TEXT FIX ===== */
+/* ===== MOBILE TEXT SCALE ===== */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2.2rem;
