@@ -6,169 +6,189 @@
 <title>HNK Stores | Luxury Watches</title>
 
 <style>
-/* ================= RESET ================= */
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+  background:#000;
+  color:#f0f0f0;
 }
 
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #000;
-  color: #fff;
+/* ================= HEADER ================= */
+
+header{
+  position:relative;
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
 
-/* ================= HERO / HEADER ================= */
-header {
-  min-height: 100vh;
-  min-height: 100svh;
-
-  /* DESKTOP BACKGROUND */
-  background-image:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("BG.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  padding: 20px;
+/* SLIDER (DESKTOP ONLY) */
+.header-slider{
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
 }
 
-/* ================= MOBILE IMAGE SWAP ================= */
-@media (max-width: 768px) {
-  header {
-    background-image:
-      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-      url("Black Gold Elegant Luxury Watch Shop Logo.jpg");
-
-    background-size: contain; /* FULL IMAGE ON PHONE */
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+.header-slider img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  animation:slideFade 10s infinite;
 }
 
-/* ================= HEADER CONTENT ================= */
-.hero-box {
-  max-width: 900px;
+.header-slider img:nth-child(1){
+  animation-delay:0s;
 }
 
-header h1 {
-  font-size: 3.5rem;
-  letter-spacing: 7px;
-  margin-bottom: 20px;
-  background: linear-gradient(90deg,#8a6b2f,#e6c87b,#bfa14a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.header-slider img:nth-child(2){
+  animation-delay:5s;
 }
 
-header p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #eaeaea;
+@keyframes slideFade{
+  0%{opacity:0;}
+  10%{opacity:1;}
+  45%{opacity:1;}
+  55%{opacity:0;}
+  100%{opacity:0;}
 }
 
-/* ================= BUTTON ================= */
-.cta {
-  display: inline-block;
-  margin-top: 35px;
-  padding: 14px 34px;
-  background: linear-gradient(90deg,#25D366,#128C7E);
-  color: #000;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
+/* HEADER CONTENT */
+.header-content{
+  background:rgba(0,0,0,0.55);
+  padding:50px 30px;
+  border-radius:20px;
+}
+
+header h1{
+  font-size:3.6rem;
+  letter-spacing:7px;
+  margin-bottom:20px;
+  background:linear-gradient(90deg,#8a6b2f,#e6c87b,#bfa14a);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+header p{
+  max-width:800px;
+  margin:auto;
+  font-size:1.15rem;
+  line-height:1.8;
+  color:#ddd;
+}
+
+.cta{
+  margin-top:35px;
+  display:inline-block;
+  padding:14px 34px;
+  background:linear-gradient(90deg,#25D366,#128C7E);
+  color:#000;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:bold;
 }
 
 /* ================= SECTIONS ================= */
-section {
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: auto;
+
+section{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
 }
 
-.section-title {
-  text-align: center;
-  font-size: 2.3rem;
-  margin-bottom: 40px;
-  letter-spacing: 3px;
-  background: linear-gradient(90deg,#e6c87b,#bfa14a,#ffffff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.section-title{
+  text-align:center;
+  font-size:2.4rem;
+  margin-bottom:45px;
+  letter-spacing:3px;
+  background:linear-gradient(90deg,#e6c87b,#bfa14a,#fff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-/* ================= PRODUCTS ================= */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
 
-.product {
-  background: #fff;
-  color: #000;
-  border-radius: 22px;
-  padding: 22px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+.product{
+  background:#fff;
+  color:#000;
+  border-radius:22px;
+  padding:22px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.25);
+  text-align:center;
 }
 
-.product img {
-  width: 100%;
-  border-radius: 15px;
-  margin-bottom: 15px;
+.product img{
+  width:100%;
+  border-radius:15px;
 }
 
-.price {
-  color: #bfa14a;
-  font-weight: bold;
-  margin-bottom: 10px;
+.price{
+  color:#bfa14a;
+  font-weight:bold;
+  margin:12px 0;
 }
 
-.availability {
-  font-size: 0.9rem;
-  margin-bottom: 15px;
+.order-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:12px 24px;
+  background:#25D366;
+  color:#000;
+  text-decoration:none;
+  border-radius:25px;
+  font-weight:bold;
 }
 
-.order-btn {
-  display: inline-block;
-  padding: 12px 22px;
-  background: #25D366;
-  color: #000;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: bold;
-}
-
-/* ================= TEXT SECTIONS ================= */
-.about, .policy {
-  text-align: center;
-  line-height: 1.9;
-  font-weight: 500;
+.about,.policy{
+  text-align:center;
+  line-height:1.9;
 }
 
 /* ================= FOOTER ================= */
-footer {
-  background: #000;
-  padding: 30px 20px;
-  text-align: center;
-  color: #bfa14a;
-  font-size: 0.95rem;
+
+footer{
+  background:#000;
+  padding:30px 20px;
+  text-align:center;
+  color:#bfa14a;
+  font-size:.95rem;
 }
 
-/* ================= MOBILE TEXT FIX ================= */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2.2rem;
-    letter-spacing: 4px;
+/* ================= MOBILE MODE ================= */
+
+@media(max-width:768px){
+
+  header{
+    height:90vh;
+    background:
+      linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+      url("Black Gold Elegant Luxury Watch Shop Logo.jpg")
+      center/contain no-repeat;
   }
 
-  header p {
-    font-size: 1rem;
+  .header-slider{
+    display:none;
+  }
+
+  header h1{
+    font-size:2.4rem;
+    letter-spacing:4px;
+  }
+
+  .header-content{
+    padding:35px 20px;
   }
 }
 </style>
@@ -176,65 +196,55 @@ footer {
 
 <body>
 
-<!-- ================= HERO ================= -->
 <header>
-  <div class="hero-box">
+
+  <!-- DESKTOP SLIDER BACKGROUNDS -->
+  <div class="header-slider">
+    <img src="BG.jpg" alt="HNK Background 1">
+    <img src="1.jpg.jpg" alt="HNK Background 2">
+  </div>
+
+  <!-- HEADER TEXT -->
+  <div class="header-content">
     <h1>HNK STORES</h1>
+
     <p>
-      Where luxury meets precision.<br>
-      Premium watches crafted for daily style and timeless elegance.
+      Luxury watches designed for daily styling and timeless elegance.
+      Precision, class, and confidence — only at HNK Stores.
+    </p>
+
+    <p style="margin-top:18px;letter-spacing:3px;color:#e6c87b;">
+      OFFICIAL LAUNCH • 1 JANUARY 2026
     </p>
 
     <a class="cta" href="https://wa.me/923435266919" target="_blank">
       Order on WhatsApp
     </a>
   </div>
+
 </header>
 
-<!-- ================= PRODUCTS ================= -->
-<section>
-  <h2 class="section-title">Daily Styling Watches</h2>
-
-  <div class="products">
-    <div class="product">
-      <img src="1.jpg" alt="Daily Watch">
-      <h3>Minimal Everyday Watch</h3>
-      <p><strong>Product Code:</strong> HNK-DW-001</p>
-      <div class="price">PKR — Confirm via WhatsApp</div>
-      <div class="availability">Available on Order</div>
-
-      <a class="order-btn"
-         href="https://wa.me/923435266919?text=I%20want%20to%20order%20HNK-DW-001"
-         target="_blank">
-         Order on WhatsApp
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= ABOUT ================= -->
 <section class="about">
-  <h2 class="section-title">About HNK Stores</h2>
-  <p>
-    HNK Stores is a luxury brand focused on premium watches.
-    Orders are confirmed via WhatsApp with personalized service.
-  </p>
+<h2 class="section-title">About HNK Stores</h2>
+<p>
+We operate on confirmed orders only.
+Each product is sourced with premium quality checks.
+</p>
 </section>
 
-<!-- ================= POLICY ================= -->
 <section class="policy">
-  <h2 class="section-title">Payment & Support</h2>
-  <p>
-    Delivery charges paid in advance.<br>
-    Product payment finalized after confirmation.<br><br>
-    Support: <strong>h123kayani1@gmail.com</strong>
-  </p>
+<h2 class="section-title">Payment & Support</h2>
+<p>
+Delivery charges paid in advance.<br>
+Order confirmation via WhatsApp.<br><br>
+Support: <strong>h123kayani1@gmail.com</strong>
+</p>
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer>
-  © 2026 HNK Stores • WhatsApp: +92 343 5266919
+© 2026 HNK Stores • WhatsApp: +92 343 5266919 • Instagram: @hnk_store
 </footer>
 
 </body>
 </html>
+
