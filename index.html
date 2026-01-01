@@ -115,23 +115,21 @@ section{
   box-shadow:0 18px 40px rgba(0,0,0,.25);
 }
 
-/* ===== UNIVERSAL MEDIA FRAME ===== */
-.media-frame{
+/* ===== UNIVERSAL IMAGE FRAME (IMPORTANT FIX) ===== */
+
+.product img,
+.luxury-slide img,
+.luxury-slide video{
   width:100%;
-  aspect-ratio:1/1;
+  height:260px;
+  object-fit:contain;
   background:#000;
   border-radius:15px;
-  overflow:hidden;
+  padding:10px;
+  aspect-ratio:1/1;
 }
 
-.media-frame img,
-.media-frame video{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-/* ================= PRICE / BUTTON ================= */
+/* ================= PRICE ================= */
 
 .price{
   color:#bfa14a;
@@ -166,16 +164,9 @@ section{
 .luxury-slide{
   min-width:100%;
   scroll-snap-align:center;
-}
-
-/* ===== SIDE BY SIDE LAST IMAGES ===== */
-.dual-images{
   display:flex;
-  gap:10px;
-}
-
-.dual-images .media-frame{
-  flex:1;
+  align-items:center;
+  justify-content:center;
 }
 
 /* ================= PERFUME ================= */
@@ -227,7 +218,7 @@ footer{
   background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
 }
 
-/* ================= MOBILE PRODUCT SWIPE ================= */
+/* ================= MOBILE SWIPE ================= */
 
 @media(max-width:768px){
   header h1{font-size:2.4rem;letter-spacing:4px}
@@ -251,78 +242,93 @@ footer{
 
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-bg"></div>
   <div class="header-overlay"></div>
+
   <div class="header-content">
     <div class="welcome">WELCOME TO HNK SSTORE</div>
     <h1>HNK SSTORE</h1>
     <div class="launch">🎉 Successfully Launched</div>
-    <p>Trusted online store providing quality watches across Pakistan.</p>
-    <p style="color:#e6c87b;letter-spacing:2px">Nationwide Delivery • Trusted Quality</p>
+    <p>
+      HNK SSTORE is a trusted online store providing quality watches across Pakistan.
+      Every product is carefully checked before dispatch.
+    </p>
+    <p style="color:#e6c87b;letter-spacing:2px">
+      Products Available • Nationwide Delivery • Trusted Quality
+    </p>
   </div>
 </header>
 
-<!-- DAILY -->
+<!-- DAILY WATCHES -->
 <section>
 <h2 class="section-title">Daily Styling Watches</h2>
+
 <div class="products">
   <div class="product">
-    <div class="media-frame"><img src="AURA FOR KIDS.jfif"></div>
+    <img src="AURA FOR KIDS.jfif">
     <h3>Aura Watch – White</h3>
+    <p><strong>Product Code:</strong> HNK-AURA-001</p>
     <div class="price">PKR 600</div>
     <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
   </div>
 
   <div class="product">
-    <div class="media-frame"><img src="AURA WATCH ORIGNAL BLACK.webp"></div>
+    <img src="AURA WATCH ORIGNAL BLACK.webp">
     <h3>Arabic Aura Watch Original Black</h3>
-    <div class="price"><del>PKR 3,000</del><br>PKR 2,499</div>
+    <p><strong>Product Code:</strong> HNK-AURA-002</p>
+    <div class="price">
+      <del>PKR 3,000</del><br>
+      PKR 2,499
+    </div>
     <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
   </div>
 </div>
 </section>
 
-<!-- LUXURY -->
+<!-- LUXURY WATCHES -->
 <section>
 <h2 class="section-title">Luxury Watches</h2>
+
 <div class="products">
 
-<div class="product">
-  <div class="luxury-slider">
-
-    <div class="luxury-slide">
-      <div class="media-frame"><img src="hublet 2.jpg"></div>
+  <!-- EXISTING PRODUCT -->
+  <div class="product">
+    <div class="luxury-slider">
+      <div class="luxury-slide"><img src="WATCH PPG.jpg"></div>
+      <div class="luxury-slide"><img src="PPG 02.jpg"></div>
+      <div class="luxury-slide"><img src="PPG BOX.jpg"></div>
+      <div class="luxury-slide"><video controls src="PPG VID.MP4"></video></div>
     </div>
-
-    <div class="luxury-slide">
-      <div class="media-frame"><img src="hublet3.jpg"></div>
-    </div>
-
-    <!-- LAST: SIDE BY SIDE -->
-    <div class="luxury-slide">
-      <div class="dual-images">
-        <div class="media-frame"><img src="hublet 4.jpg"></div>
-        <div class="media-frame"><img src="hublet box post.jpg"></div>
-      </div>
-    </div>
-
+    <h3>Patek Philippe Nautilus</h3>
+    <p><strong>Product Code:</strong> HNK-LX-002</p>
+    <div class="price"><del>PKR 4,000</del><br>PKR 3,499</div>
+    <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
   </div>
 
-  <h3>Hublot Skeleton Premium Watch</h3>
-  <div class="price">
-    <del>PKR 5,000</del><br>
-    PKR 4,399<br>
-    <small>(Offer valid till 20 January)</small>
+  <!-- NEW HUBLOT PRODUCT -->
+  <div class="product">
+    <div class="luxury-slider">
+      <div class="luxury-slide"><img src="hublet 1.jpg"></div>
+      <div class="luxury-slide"><img src="hublet 2.jpg"></div>
+      <div class="luxury-slide"><img src="hublet3.jpg"></div>
+      <div class="luxury-slide"><img src="hublet 4.jpg"></div>
+      <div class="luxury-slide"><img src="hublet box post.jpg"></div>
+    </div>
+    <h3>Hublot Skeleton Premium Watch</h3>
+    <p><strong>Product Code:</strong> HNK-LX-003</p>
+    <div class="price">
+      <del>PKR 5,000</del><br>
+      PKR 4,399<br>
+      <small>Offer valid till 20 January</small>
+    </div>
+    <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
   </div>
-  <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
-</div>
 
 </div>
 </section>
 
-<!-- PERFUME -->
+<!-- PERFUMES -->
 <section>
 <h2 class="section-title">Perfumes</h2>
 <div class="coming-soon">COMING SOON</div>
@@ -342,5 +348,3 @@ Remaining payment collected on delivery
 
 </body>
 </html>
-
-
