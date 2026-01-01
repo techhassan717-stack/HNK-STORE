@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HNK SSTORE | Watches & Perfumes</title>
 
-<meta name="description" content="HNK SSTORE – Trusted watch store in Pakistan. Quality watches with nationwide delivery.">
+<meta name="description" content="HNK SSTORE – Successfully launched watch brand in Pakistan. Products available now.">
 
 <style>
 *{box-sizing:border-box;}
@@ -15,6 +15,7 @@ body{
   font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
   background:#000;
   color:#f0f0f0;
+  overflow-x:hidden;
 }
 
 /* ================= HEADER ================= */
@@ -29,10 +30,33 @@ header{
   overflow:hidden;
 }
 
+/* Celebration Confetti */
+.confetti{
+  position:absolute;
+  width:6px;
+  height:14px;
+  background:gold;
+  top:-20px;
+  animation:fall 6s linear infinite;
+  opacity:.8;
+}
+
+.confetti:nth-child(1){left:10%;animation-delay:0s;}
+.confetti:nth-child(2){left:25%;animation-delay:1s;background:#e6c87b;}
+.confetti:nth-child(3){left:40%;animation-delay:2s;}
+.confetti:nth-child(4){left:55%;animation-delay:1.5s;background:#bfa14a;}
+.confetti:nth-child(5){left:70%;animation-delay:.5s;}
+.confetti:nth-child(6){left:85%;animation-delay:2.5s;background:#fff;}
+
+@keyframes fall{
+  0%{transform:translateY(-20px) rotate(0deg);}
+  100%{transform:translateY(110vh) rotate(360deg);}
+}
+
 .header-slider{
   position:absolute;
   inset:0;
-  z-index:-1;
+  z-index:-2;
 }
 
 .header-slider img{
@@ -56,19 +80,46 @@ header{
 }
 
 .header-content{
-  background:rgba(0,0,0,.65);
+  background:rgba(0,0,0,.7);
   padding:55px 35px;
   border-radius:22px;
   max-width:900px;
+  position:relative;
+  z-index:5;
 }
 
 header h1{
   font-size:3.6rem;
   letter-spacing:7px;
-  margin-bottom:20px;
+  margin-bottom:15px;
   background:linear-gradient(90deg,#8a6b2f,#e6c87b,#bfa14a);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+}
+
+.welcome{
+  font-size:1.3rem;
+  font-weight:700;
+  letter-spacing:2px;
+  color:#e6c87b;
+  margin-bottom:10px;
+}
+
+.launch-badge{
+  display:inline-block;
+  margin:15px 0;
+  padding:10px 25px;
+  border-radius:25px;
+  background:linear-gradient(90deg,#e6c87b,#bfa14a);
+  color:#000;
+  font-weight:800;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+  100%{transform:scale(1);}
 }
 
 header p{
@@ -181,10 +232,7 @@ footer{
   box-shadow:0 8px 20px rgba(0,0,0,.4);
 }
 
-.whatsapp{
-  background:#25D366;
-}
-
+.whatsapp{background:#25D366;}
 .instagram{
   background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
 }
@@ -194,7 +242,7 @@ footer{
 @media(max-width:768px){
   header{
     background:
-      linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+      linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
       url("Black Gold Elegant Luxury Watch Shop Logo.jpg")
       center/cover no-repeat;
   }
@@ -212,21 +260,34 @@ footer{
 <body>
 
 <header>
+
+  <!-- Confetti -->
+  <div class="confetti"></div>
+  <div class="confetti"></div>
+  <div class="confetti"></div>
+  <div class="confetti"></div>
+  <div class="confetti"></div>
+  <div class="confetti"></div>
+
   <div class="header-slider">
     <img src="BG.jpg">
     <img src="1.jpg.jpg">
   </div>
 
   <div class="header-content">
+    <div class="welcome">WELCOME TO HNK SSTORE</div>
     <h1>HNK SSTORE</h1>
+
+    <div class="launch-badge">🎉 Successfully Launched</div>
+
     <p>
-      HNK SSTORE is a trusted online brand providing high-quality watches
-      for kids and adults. We focus on original products, honest pricing,
-      and customer satisfaction. Every watch is carefully selected to
-      deliver style, durability, and value — because your trust matters.
+      We are proud to announce that HNK SSTORE is now officially live.
+      Our products are available and ready to be delivered across Pakistan.
+      Thank you for trusting us — your style journey starts here.
     </p>
+
     <p style="margin-top:15px;color:#e6c87b;letter-spacing:2px;">
-      Trusted Quality • Nationwide Delivery • Customer First
+      Products Available • Nationwide Delivery • Trusted Quality
     </p>
   </div>
 </header>
@@ -243,9 +304,7 @@ footer{
     <p><strong>Lightweight Kids Watch</strong></p>
     <p><strong>Product Code:</strong> HNK-AURA-001</p>
     <div class="price">PKR 600</div>
-    <a class="order-btn" href="https://wa.me/923435266919" target="_blank">
-      Order on WhatsApp
-    </a>
+    <a class="order-btn" href="https://wa.me/923435266919" target="_blank">Order on WhatsApp</a>
   </div>
 
   <div class="product">
@@ -255,9 +314,7 @@ footer{
     <p>No compromise on quality</p>
     <p><strong>Product Code:</strong> HNK-AURA-002</p>
     <div class="price">PKR 2,500</div>
-    <a class="order-btn" href="https://wa.me/923435266919" target="_blank">
-      Order on WhatsApp
-    </a>
+    <a class="order-btn" href="https://wa.me/923435266919" target="_blank">Order on WhatsApp</a>
   </div>
 
 </div>
@@ -272,9 +329,7 @@ footer{
     <img src="luxury-watch.jpg">
     <h3>Classic Gold Dial Luxury Watch</h3>
     <p><strong>Product Code:</strong> HNK-LX-001</p>
-    <a class="order-btn" href="https://wa.me/923435266919" target="_blank">
-      Order on WhatsApp
-    </a>
+    <a class="order-btn" href="https://wa.me/923435266919" target="_blank">Order on WhatsApp</a>
   </div>
 </div>
 </section>
@@ -294,7 +349,6 @@ Delivery fee is paid in advance.<br>
 Remaining payment is collected on delivery.
 </footer>
 
-<!-- FLOATING ICONS -->
 <div class="floating-icons">
   <a href="https://wa.me/923435266919" class="whatsapp" target="_blank">🟢</a>
   <a href="https://instagram.com/hnk_sstore" class="instagram" target="_blank">📷</a>
