@@ -162,7 +162,8 @@ section{
   text-align:center;
 }
 
-.product img{
+.product img,
+.product video{
   width:100%;
   border-radius:15px;
   margin-bottom:18px;
@@ -260,8 +261,6 @@ footer{
 <body>
 
 <header>
-
-  <!-- Confetti -->
   <div class="confetti"></div>
   <div class="confetti"></div>
   <div class="confetti"></div>
@@ -277,15 +276,12 @@ footer{
   <div class="header-content">
     <div class="welcome">WELCOME TO HNK SSTORE</div>
     <h1>HNK SSTORE</h1>
-
     <div class="launch-badge">🎉 Successfully Launched</div>
-
     <p>
       We are proud to announce that HNK SSTORE is now officially live.
       Our products are available and ready to be delivered across Pakistan.
       Thank you for trusting us — your style journey starts here.
     </p>
-
     <p style="margin-top:15px;color:#e6c87b;letter-spacing:2px;">
       Products Available • Nationwide Delivery • Trusted Quality
     </p>
@@ -295,7 +291,6 @@ footer{
 <!-- DAILY STYLING WATCHES -->
 <section>
 <h2 class="section-title">Daily Styling Watches</h2>
-
 <div class="products">
 
   <div class="product">
@@ -323,14 +318,38 @@ footer{
 <!-- LUXURY WATCHES -->
 <section>
 <h2 class="section-title">Luxury Watches</h2>
-
 <div class="products">
+
   <div class="product">
     <img src="luxury-watch.jpg">
     <h3>Classic Gold Dial Luxury Watch</h3>
     <p><strong>Product Code:</strong> HNK-LX-001</p>
     <a class="order-btn" href="https://wa.me/923435266919" target="_blank">Order on WhatsApp</a>
   </div>
+
+  <!-- NEW PRODUCT ADDED -->
+  <div class="product">
+    <img src="WATCH PPG.jpg">
+    <img src="PPG 02.jpg">
+    <img src="PPG BOX.jpg">
+
+    <video controls>
+      <source src="PPG VID.MP4" type="video/mp4">
+    </video>
+
+    <h3>Premium PPG Luxury Watch</h3>
+    <p><strong>Product Code:</strong> HNK-LX-002</p>
+
+    <div class="price">
+      <del style="color:#999;">PKR 4,000</del><br>
+      PKR 3,499
+    </div>
+
+    <a class="order-btn" href="https://wa.me/923435266919" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+
 </div>
 </section>
 
