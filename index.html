@@ -149,10 +149,11 @@ section{
 
 /* FORCE VERTICAL PRODUCTS */
 .products{
-  display:flex;
-  flex-direction:column;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:35px;
 }
+
 
 .product{
   background:#fff;
@@ -387,3 +388,4 @@ WhatsApp: +92 343 5266919 • Instagram: @hnk_sstore
 
 </body>
 </html>
+
