@@ -18,7 +18,6 @@ body{
 }
 
 /* ================= HEADER ================= */
-
 header{
   height:100vh;
   position:relative;
@@ -44,27 +43,27 @@ header{
 
 .header-content{
   max-width:900px;
-  padding:45px 30px;
+  padding:40px 30px;
   background:rgba(0,0,0,.65);
   border-radius:22px;
 }
 
-/* ===== TOP HERO SLIDER (FIXED FIT) ===== */
-
-.hero-frame{
+/* ===== TOP HERO SLIDER ===== */
+.hero-slider{
+  position:relative;
   width:100%;
-  max-width:780px;
-  margin:0 auto 30px;
+  height:260px;
   overflow:hidden;
   border-radius:18px;
-  border:2px solid #bfa14a;
   background:#000;
+  margin-bottom:30px;
 }
 
-.hero-slider{
+.hero-track{
   display:flex;
   width:300%;
-  animation:heroSlide 12s infinite;
+  height:100%;
+  transition:transform .6s ease-in-out;
 }
 
 .hero-slide{
@@ -77,23 +76,34 @@ header{
 
 .hero-slide img{
   width:100%;
-  height:260px;
-  object-fit:contain;      /* ✅ FIX */
+  height:100%;
+  object-fit:contain;
   background:#000;
-  padding:10px;            /* ✅ PREMIUM LOOK */
-  display:block;
 }
 
-@keyframes heroSlide{
-  0%{transform:translateX(0)}
-  33%{transform:translateX(0)}
-  38%{transform:translateX(-100%)}
-  66%{transform:translateX(-100%)}
-  71%{transform:translateX(-200%)}
-  100%{transform:translateX(-200%)}
+/* Slider Buttons */
+.hero-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,.6);
+  color:#e6c87b;
+  border:none;
+  font-size:26px;
+  padding:8px 14px;
+  cursor:pointer;
+  border-radius:50%;
 }
 
-/* ===== HEADER TEXT ===== */
+.hero-btn.left{left:10px;}
+.hero-btn.right{right:10px;}
+
+.welcome{
+  color:#e6c87b;
+  letter-spacing:2px;
+  margin-bottom:10px;
+  font-weight:700;
+}
 
 header h1{
   font-size:3.5rem;
@@ -101,13 +111,6 @@ header h1{
   background:linear-gradient(90deg,#8a6b2f,#e6c87b,#bfa14a);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-}
-
-.welcome{
-  color:#e6c87b;
-  letter-spacing:2px;
-  margin-bottom:10px;
-  font-weight:700;
 }
 
 .launch{
@@ -127,7 +130,6 @@ header p{
 }
 
 /* ================= SECTIONS ================= */
-
 section{
   max-width:1200px;
   margin:auto;
@@ -145,7 +147,6 @@ section{
 }
 
 /* ================= PRODUCTS ================= */
-
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -173,7 +174,6 @@ section{
 }
 
 /* ================= PRICE ================= */
-
 .price{
   color:#bfa14a;
   font-weight:800;
@@ -193,7 +193,6 @@ section{
 }
 
 /* ================= SLIDER ================= */
-
 .luxury-slider{
   display:flex;
   overflow-x:auto;
@@ -213,7 +212,6 @@ section{
 }
 
 /* ================= POLICIES ================= */
-
 .policies{
   text-align:center;
   line-height:2;
@@ -221,7 +219,6 @@ section{
 }
 
 /* ================= FOOTER ================= */
-
 footer{
   padding:40px 20px;
   text-align:center;
@@ -230,7 +227,6 @@ footer{
 }
 
 /* ================= FLOATING ================= */
-
 .floating{
   position:fixed;
   right:20px;
@@ -259,13 +255,10 @@ footer{
 }
 
 /* ================= MOBILE ================= */
-
 @media(max-width:768px){
   header h1{font-size:2.4rem}
 
-  .hero-slide img{
-    height:200px;
-  }
+  .hero-slider{height:220px}
 
   .products{
     display:flex;
@@ -292,12 +285,15 @@ footer{
 
   <div class="header-content">
 
-    <div class="hero-frame">
-      <div class="hero-slider">
+    <!-- HERO SLIDER -->
+    <div class="hero-slider">
+      <div class="hero-track" id="heroTrack">
         <div class="hero-slide"><img src="thumnail.jpeg"></div>
         <div class="hero-slide"><img src="thumnail3.jpeg"></div>
         <div class="hero-slide"><img src="thumnail2.jpeg"></div>
       </div>
+      <button class="hero-btn left" onclick="prevSlide()">❮</button>
+      <button class="hero-btn right" onclick="nextSlide()">❯</button>
     </div>
 
     <div class="welcome">WELCOME TO HNK SSTORE</div>
@@ -305,15 +301,41 @@ footer{
     <div class="launch">🎉 Successfully Launched</div>
 
     <p>
-      HNK SSTORE is a trusted online store in Pakistan providing premium watches
-      and lifestyle products. Each item is inspected before dispatch.
+      HNK SSTORE is a trusted online store in Pakistan providing premium watches and lifestyle products.
+      Each item is inspected before dispatch.
     </p>
+
     <p style="color:#e6c87b;letter-spacing:2px">
       Watches • Perfumes • Nationwide Delivery • Cash on Delivery
     </p>
 
   </div>
 </header>
+
+<!-- 🔹 REST OF YOUR WEBSITE IS 100% UNCHANGED 🔹 -->
+
+<script>
+let index = 0;
+const track = document.getElementById("heroTrack");
+const total = 3;
+
+function updateSlide(){
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function nextSlide(){
+  index = (index + 1) % total;
+  updateSlide();
+}
+
+function prevSlide(){
+  index = (index - 1 + total) % total;
+  updateSlide();
+}
+
+/* Auto swipe every 5 seconds */
+setInterval(nextSlide, 5000);
+</script>
 
 </body>
 </html>
