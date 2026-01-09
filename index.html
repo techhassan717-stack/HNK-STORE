@@ -8,6 +8,7 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+
 body{
   font-family:'Segoe UI',Tahoma,Verdana,sans-serif;
   background:#000;
@@ -17,74 +18,67 @@ body{
 
 /* ================= HEADER ================= */
 header{
-  min-height:100vh;
+  height:100vh;
   position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
+  text-align:center;
 }
+
 .header-bg{
   position:absolute;
   inset:0;
   background:url("BG.jpg") center/cover no-repeat;
   z-index:-2;
 }
+
 .header-overlay{
   position:absolute;
   inset:0;
   background:rgba(0,0,0,.75);
   z-index:-1;
 }
+
 .header-content{
-  max-width:1000px;
-  padding:40px;
+  max-width:900px;
+  padding:40px 30px;
   background:rgba(0,0,0,.65);
   border-radius:22px;
-  text-align:center;
 }
 
-/* ================= HERO SLIDER ================= */
+/* ===== HERO SLIDER ===== */
 .hero-slider{
   position:relative;
   width:100%;
-  height:280px;
+  height:260px;
   overflow:hidden;
   border-radius:18px;
   background:#000;
   margin-bottom:30px;
 }
+
 .hero-track{
   display:flex;
-  width:300%;
   height:100%;
   transition:transform .6s ease-in-out;
 }
+
 .hero-slide{
-  flex:0 0 100%;
-  position:relative;
+  width:100%;
+  flex-shrink:0;
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden;
 }
-.hero-slide::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:var(--bg);
-  background-size:cover;
-  background-position:center;
-  filter:blur(28px);
-  transform:scale(1.2);
-  z-index:1;
-}
+
 .hero-slide img{
-  position:relative;
-  z-index:2;
-  max-width:100%;
-  max-height:100%;
+  width:100%;
+  height:100%;
   object-fit:contain;
 }
+
+/* slider arrows */
 .hero-btn{
   position:absolute;
   top:50%;
@@ -96,19 +90,25 @@ header{
   padding:8px 14px;
   cursor:pointer;
   border-radius:50%;
-  z-index:5;
 }
 .hero-btn.left{left:10px;}
 .hero-btn.right{right:10px;}
 
-.welcome{color:#e6c87b;letter-spacing:2px;font-weight:700}
+.welcome{
+  color:#e6c87b;
+  letter-spacing:2px;
+  margin-bottom:10px;
+  font-weight:700;
+}
+
 header h1{
-  font-size:3.2rem;
+  font-size:3.5rem;
   letter-spacing:6px;
   background:linear-gradient(90deg,#8a6b2f,#e6c87b,#bfa14a);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
+
 .launch{
   display:inline-block;
   margin:15px 0;
@@ -119,12 +119,19 @@ header h1{
   font-weight:800;
 }
 
+header p{
+  margin-top:15px;
+  line-height:1.8;
+  color:#ddd;
+}
+
 /* ================= SECTIONS ================= */
 section{
   max-width:1200px;
   margin:auto;
-  padding:80px 20px;
+  padding:90px 20px;
 }
+
 .section-title{
   text-align:center;
   font-size:2.5rem;
@@ -141,6 +148,7 @@ section{
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:35px;
 }
+
 .product{
   background:#fff;
   color:#000;
@@ -149,7 +157,10 @@ section{
   text-align:center;
   box-shadow:0 18px 40px rgba(0,0,0,.25);
 }
-.product img{
+
+.product img,
+.luxury-slide img,
+.luxury-slide video{
   width:100%;
   height:260px;
   object-fit:contain;
@@ -157,12 +168,15 @@ section{
   border-radius:15px;
   padding:10px;
 }
+
+/* ================= PRICE ================= */
 .price{
   color:#bfa14a;
   font-weight:800;
   margin:12px 0;
   font-size:1.2rem;
 }
+
 .order-btn{
   display:inline-block;
   margin-top:10px;
@@ -174,17 +188,79 @@ section{
   font-weight:700;
 }
 
+/* ================= SLIDER ================= */
+.luxury-slider{
+  display:flex;
+  overflow-x:auto;
+  gap:15px;
+  scroll-snap-type:x mandatory;
+  margin-bottom:15px;
+}
+.luxury-slider::-webkit-scrollbar{display:none;}
+.luxury-slide{
+  min-width:100%;
+  scroll-snap-align:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* ================= POLICIES ================= */
+.policies{
+  text-align:center;
+  line-height:2;
+  color:#ddd;
+}
+
 /* ================= FOOTER ================= */
 footer{
   padding:40px 20px;
   text-align:center;
   color:#bfa14a;
+  line-height:1.8;
+}
+
+/* ================= FLOATING ================= */
+.floating{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:9999;
+}
+.floating a{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  font-size:26px;
+  color:#fff;
+}
+.whatsapp{background:#25D366;}
+.instagram{
+  background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
 }
 
 /* ================= MOBILE ================= */
 @media(max-width:768px){
-  header h1{font-size:2.2rem}
+  header h1{font-size:2.4rem}
   .hero-slider{height:220px}
+  .products{
+    display:flex;
+    overflow-x:auto;
+    gap:20px;
+    scroll-snap-type:x mandatory;
+  }
+  .product{
+    min-width:85%;
+    scroll-snap-align:center;
+  }
+  .products::-webkit-scrollbar{display:none;}
 }
 </style>
 </head>
@@ -196,11 +272,12 @@ footer{
   <div class="header-overlay"></div>
 
   <div class="header-content">
+
     <div class="hero-slider">
       <div class="hero-track" id="heroTrack">
-        <div class="hero-slide" style="--bg:url('thumnail.jpeg')"><img src="thumnail.jpeg"></div>
-        <div class="hero-slide" style="--bg:url('thumnail2.jpeg')"><img src="thumnail2.jpeg"></div>
-        <div class="hero-slide" style="--bg:url('thumnail3.jpeg')"><img src="thumnail3.jpeg"></div>
+        <div class="hero-slide"><img src="thumnail.jpeg"></div>
+        <div class="hero-slide"><img src="thumnail3.jpeg"></div>
+        <div class="hero-slide"><img src="thumnail2.jpeg"></div>
       </div>
       <button class="hero-btn left" onclick="prevSlide()">❮</button>
       <button class="hero-btn right" onclick="nextSlide()">❯</button>
@@ -209,67 +286,164 @@ footer{
     <div class="welcome">WELCOME TO HNK SSTORE</div>
     <h1>HNK SSTORE</h1>
     <div class="launch">🎉 Successfully Launched</div>
-    <p>Trusted online store in Pakistan providing premium watches & perfumes.</p>
+
+    <p>
+      HNK SSTORE is a trusted online store in Pakistan providing premium watches and lifestyle products.
+      Each item is inspected before dispatch.
+    </p>
+
+    <p style="color:#e6c87b;letter-spacing:2px">
+      Watches • Perfumes • Nationwide Delivery • Cash on Delivery
+    </p>
+
   </div>
 </header>
 
-<!-- ================= DAILY WATCHES ================= -->
+<!-- DAILY WATCHES -->
 <section>
-  <div class="section-title">Daily Watches</div>
-  <div class="products">
-    <div class="product">
-      <img src="daily1.jpg">
-      <h3>Classic Daily Watch</h3>
-      <div class="price">Rs. 2,500</div>
-      <a class="order-btn" href="https://wa.me/92XXXXXXXXX">Order on WhatsApp</a>
-    </div>
-    <div class="product">
-      <img src="daily2.jpg">
-      <h3>Sport Casual Watch</h3>
-      <div class="price">Rs. 2,800</div>
-      <a class="order-btn" href="https://wa.me/92XXXXXXXXX">Order on WhatsApp</a>
-    </div>
-  </div>
+<h2 class="section-title">Daily Styling Watches</h2>
+<div class="products">
+
+<div class="product">
+<img src="AURA FOR KIDS.jfif">
+<h3>Aura Watch – White</h3>
+<p><strong>Product Code:</strong> HNK-AURA-001</p>
+<div class="price">PKR 600</div>
+<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
+</div>
+
+<div class="product">
+<div class="luxury-slider">
+<div class="luxury-slide"><img src="aura black (2).jpg"></div>
+<div class="luxury-slide"><img src="aura black (3).jpg"></div>
+<div class="luxury-slide"><img src="aura black (4).jpg"></div>
+<div class="luxury-slide"><img src="aura black (6).jpg"></div>
+</div>
+<h3>Arabic Aura Watch – Black</h3>
+<p><strong>Product Code:</strong> HNK-AURA-002</p>
+<div class="price"><del>PKR 3,000</del><br>PKR 2,499</div>
+<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
+</div>
+
+</div>
 </section>
 
-<!-- ================= LUXURY WATCHES ================= -->
+<!-- LUXURY WATCHES -->
 <section>
-  <div class="section-title">Luxury Watches</div>
-  <div class="products">
-    <div class="product">
-      <img src="rolex gold red.jpg">
-      <h3>Rolex Oyster Perpetual Datejust</h3>
-      <div class="price"><del>Rs. 3,500</del> Rs. 3,000</div>
-      <a class="order-btn" href="https://wa.me/92XXXXXXXXX">Order on WhatsApp</a>
-    </div>
-  </div>
+<h2 class="section-title">Luxury Watches</h2>
+<div class="products">
+
+<div class="product">
+<div class="luxury-slider">
+<div class="luxury-slide"><img src="WATCH PPG.jpg"></div>
+<div class="luxury-slide"><img src="PPG 02.jpg"></div>
+<div class="luxury-slide"><img src="PPG BOX.jpg"></div>
+<div class="luxury-slide"><video controls src="PPG VID.MP4"></video></div>
+</div>
+<h3>Patek Philippe Nautilus</h3>
+<p><strong>Product Code:</strong> HNK-LX-002</p>
+<div class="price"><del>PKR 4,000</del><br>PKR 3,499</div>
+<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
+</div>
+
+<div class="product">
+<div class="luxury-slider">
+<div class="luxury-slide"><img src="hublet 1.jpg"></div>
+<div class="luxury-slide"><img src="hublet 2.jpg"></div>
+<div class="luxury-slide"><img src="hublet3.jpg"></div>
+<div class="luxury-slide"><img src="hublet 4.jpg"></div>
+<div class="luxury-slide"><img src="hublet box post.jpg"></div>
+</div>
+<h3>Hublot Skeleton Premium Watch</h3>
+<p><strong>Product Code:</strong> HNK-LX-003</p>
+<div class="price"><del>PKR 5,000</del><br>PKR 4,399</div>
+<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
+</div>
+
+<div class="product">
+<div class="luxury-slider">
+<div class="luxury-slide"><img src="golden aura .jpg"></div>
+<div class="luxury-slide"><img src="golden aura 3.jpg"></div>
+<div class="luxury-slide"><img src="golden aura 4.jpg"></div>
+<div class="luxury-slide"><img src="golden aura 5.jpg"></div>
+<div class="luxury-slide"><img src="golden aura.jpg"></div>
+<div class="luxury-slide"><img src="golder aura.jpg"></div>
+<div class="luxury-slide"><img src="golden 6.jpg"></div>
+</div>
+<h3>Arabic Aura Watch – Golden Edition</h3>
+<p><strong>Product Code:</strong> HNK-LX-004</p>
+<div class="price"><del>PKR 3,500</del><br>PKR 3,000</div>
+<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
+</div>
+
+<div class="product">
+<div class="luxury-slider">
+<div class="luxury-slide"><img src="rolex gold red.jpg"></div>
+<div class="luxury-slide"><img src="rolex gold red2.jpg"></div>
+<div class="luxury-slide"><img src="rolex gold red3.jpg"></div>
+<div class="luxury-slide"><img src="rolex gold red4.jpg"></div>
+<div class="luxury-slide"><img src="rolex gold red05.jpg"></div>
+</div>
+<h3>Rolex Oyster Perpetual Datejust</h3>
+<p><strong>Product Code:</strong> HNK-LX-005</p>
+<div class="price"><del>PKR 3,500</del><br>PKR 3,000</div>
+<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
+</div>
+
+</div>
 </section>
 
-<!-- ================= PERFUMES ================= -->
 <section>
-  <div class="section-title">Perfumes</div>
-  <div class="products">
-    <div class="product">
-      <img src="perfume1.jpg">
-      <h3>Luxury Oud Perfume</h3>
-      <div class="price">Rs. 3,200</div>
-      <a class="order-btn" href="https://wa.me/92XXXXXXXXX">Order on WhatsApp</a>
-    </div>
-  </div>
+<h2 class="section-title">Perfumes</h2>
+<div style="text-align:center;font-size:2.5rem;font-weight:800;color:#e6c87b;">COMING SOON</div>
+</section>
+
+<section>
+<h2 class="section-title">Our Policies</h2>
+<div class="policies">
+✔ Nationwide Delivery<br>
+✔ Cash on Delivery Available<br>
+✔ Advance Delivery Charges Apply<br>
+✔ Products Checked Before Dispatch<br>
+✔ Customer Satisfaction Guaranteed
+</div>
 </section>
 
 <footer>
-  © 2026 HNK SSTORE – All Rights Reserved
+© 2026 <strong>HNK SSTORE</strong><br>
+All Rights Reserved
 </footer>
+
+<div class="floating">
+<a class="whatsapp" href="https://wa.me/923435266919">🟢</a>
+<a class="instagram" href="https://instagram.com/hnk_sstore">📷</a>
+</div>
 
 <script>
 let index = 0;
 const track = document.getElementById("heroTrack");
-const slides = document.querySelectorAll(".hero-slide");
-function update(){track.style.transform=`translateX(-${index*100}%)`;}
-function nextSlide(){index=(index+1)%slides.length;update();}
-function prevSlide(){index=(index-1+slides.length)%slides.length;update();}
-setInterval(nextSlide,5000);
+const totalSlides = document.querySelectorAll(".hero-slide").length;
+
+function update(){
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  index = 0;
+  update();
+});
+
+function nextSlide(){
+  index = (index + 1) % totalSlides;
+  update();
+}
+
+function prevSlide(){
+  index = (index - 1 + totalSlides) % totalSlides;
+  update();
+}
+
+setInterval(nextSlide, 5000);
 </script>
 
 </body>
