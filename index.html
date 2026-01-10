@@ -25,21 +25,18 @@ header{
   justify-content:center;
   text-align:center;
 }
-
 .header-bg{
   position:absolute;
   inset:0;
   background:url("BG.jpg") center/cover no-repeat;
   z-index:-2;
 }
-
 .header-overlay{
   position:absolute;
   inset:0;
   background:rgba(0,0,0,.75);
   z-index:-1;
 }
-
 .header-content{
   max-width:900px;
   padding:40px 30px;
@@ -57,13 +54,11 @@ header{
   background:#000;
   margin-bottom:30px;
 }
-
 .hero-track{
   display:flex;
   height:100%;
   transition:transform .6s ease-in-out;
 }
-
 .hero-slide{
   width:100%;
   flex-shrink:0;
@@ -71,14 +66,11 @@ header{
   align-items:center;
   justify-content:center;
 }
-
 .hero-slide img{
   width:100%;
   height:100%;
   object-fit:contain;
 }
-
-/* slider arrows */
 .hero-btn{
   position:absolute;
   top:50%;
@@ -100,7 +92,6 @@ header{
   margin-bottom:10px;
   font-weight:700;
 }
-
 header h1{
   font-size:3.5rem;
   letter-spacing:6px;
@@ -108,7 +99,6 @@ header h1{
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
-
 .launch{
   display:inline-block;
   margin:15px 0;
@@ -118,7 +108,6 @@ header h1{
   color:#000;
   font-weight:800;
 }
-
 header p{
   margin-top:15px;
   line-height:1.8;
@@ -131,7 +120,6 @@ section{
   margin:auto;
   padding:90px 20px;
 }
-
 .section-title{
   text-align:center;
   font-size:2.5rem;
@@ -148,7 +136,6 @@ section{
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:35px;
 }
-
 .product{
   background:#fff;
   color:#000;
@@ -157,7 +144,6 @@ section{
   text-align:center;
   box-shadow:0 18px 40px rgba(0,0,0,.25);
 }
-
 .product img,
 .luxury-slide img,
 .luxury-slide video{
@@ -169,6 +155,14 @@ section{
   padding:10px;
 }
 
+/* ORDER COUNT */
+.order-count{
+  font-size:14px;
+  font-weight:700;
+  margin:6px 0;
+  color:#333;
+}
+
 /* ================= PRICE ================= */
 .price{
   color:#bfa14a;
@@ -176,7 +170,6 @@ section{
   margin:12px 0;
   font-size:1.2rem;
 }
-
 .order-btn{
   display:inline-block;
   margin-top:10px;
@@ -205,7 +198,7 @@ section{
   justify-content:center;
 }
 
-/* ================= NEW: ORDER + REVIEWS ================= */
+/* ================= FORMS ================= */
 .form-box{
   background:#111;
   padding:30px;
@@ -279,7 +272,6 @@ footer{
   background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
 }
 
-/* ================= MOBILE ================= */
 @media(max-width:768px){
   header h1{font-size:2.4rem}
   .hero-slider{height:220px}
@@ -300,41 +292,41 @@ footer{
 
 <body>
 
-<!-- ORDER COUNTER -->
+<!-- TOTAL ORDER COUNTER -->
 <section>
 <h2 class="section-title">Total Orders Placed</h2>
 <div id="orderCount" style="text-align:center;font-size:3rem;color:#e6c87b;">0</div>
 </section>
 
 <header>
-  <div class="header-bg"></div>
-  <div class="header-overlay"></div>
-  <div class="header-content">
+<div class="header-bg"></div>
+<div class="header-overlay"></div>
+<div class="header-content">
 
-    <div class="hero-slider">
-      <div class="hero-track" id="heroTrack">
-        <div class="hero-slide"><img src="thumnail.jpeg"></div>
-        <div class="hero-slide"><img src="thumnail3.jpeg"></div>
-        <div class="hero-slide"><img src="thumnail2.jpeg"></div>
-      </div>
-      <button class="hero-btn left" onclick="prevSlide()">❮</button>
-      <button class="hero-btn right" onclick="nextSlide()">❯</button>
-    </div>
+<div class="hero-slider">
+<div class="hero-track" id="heroTrack">
+<div class="hero-slide"><img src="thumnail.jpeg"></div>
+<div class="hero-slide"><img src="thumnail3.jpeg"></div>
+<div class="hero-slide"><img src="thumnail2.jpeg"></div>
+</div>
+<button class="hero-btn left" onclick="prevSlide()">❮</button>
+<button class="hero-btn right" onclick="nextSlide()">❯</button>
+</div>
 
-    <div class="welcome">WELCOME TO HNK SSTORE</div>
-    <h1>HNK SSTORE</h1>
-    <div class="launch">🎉 Successfully Launched</div>
+<div class="welcome">WELCOME TO HNK SSTORE</div>
+<h1>HNK SSTORE</h1>
+<div class="launch">🎉 Successfully Launched</div>
 
-    <p>
-      HNK SSTORE is a trusted online store in Pakistan providing premium watches and lifestyle products.
-      Each item is inspected before dispatch.
-    </p>
+<p>
+HNK SSTORE is a trusted online store in Pakistan providing premium watches and lifestyle products.
+Each item is inspected before dispatch.
+</p>
 
-    <p style="color:#e6c87b;letter-spacing:2px">
-      Watches • Perfumes • Nationwide Delivery • Cash on Delivery
-    </p>
+<p style="color:#e6c87b;letter-spacing:2px">
+Watches • Perfumes • Nationwide Delivery • Cash on Delivery
+</p>
 
-  </div>
+</div>
 </header>
 
 <!-- DAILY WATCHES -->
@@ -346,8 +338,9 @@ footer{
 <img src="AURA FOR KIDS.jfif">
 <h3>Aura Watch – White</h3>
 <p><strong>Product Code:</strong> HNK-AURA-001</p>
+<div class="order-count" id="count-HNK-AURA-001">Orders: 0</div>
 <div class="price">PKR 600</div>
-<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
+<a class="order-btn" href="https://wa.me/923435266919" onclick="orderProduct('HNK-AURA-001')">Order on WhatsApp</a>
 </div>
 
 <div class="product">
@@ -359,8 +352,9 @@ footer{
 </div>
 <h3>Arabic Aura Watch – Black</h3>
 <p><strong>Product Code:</strong> HNK-AURA-002</p>
+<div class="order-count" id="count-HNK-AURA-002">Orders: 0</div>
 <div class="price"><del>PKR 3,000</del><br>PKR 2,499</div>
-<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
+<a class="order-btn" href="https://wa.me/923435266919" onclick="orderProduct('HNK-AURA-002')">Order on WhatsApp</a>
 </div>
 
 <div class="product">
@@ -371,9 +365,9 @@ footer{
 <div class="luxury-slide"><img src="clyclr (5).jpg"></div>
 </div>
 <h3>Rotating Rim Watch</h3>
-<p><strong>Quality:</strong> Stainless Steel & Chain</p>
+<div class="order-count" id="count-HNK-ROT-003">Orders: 0</div>
 <div class="price"><del>PKR 3,000</del><br>PKR 2,499</div>
-<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
+<a class="order-btn" href="https://wa.me/923435266919" onclick="orderProduct('HNK-ROT-003')">Order on WhatsApp</a>
 </div>
 
 </div>
@@ -393,8 +387,9 @@ footer{
 </div>
 <h3>Patek Philippe Nautilus</h3>
 <p><strong>Product Code:</strong> HNK-LX-002</p>
+<div class="order-count" id="count-HNK-LX-002">Orders: 0</div>
 <div class="price"><del>PKR 4,000</del><br>PKR 3,499</div>
-<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
+<a class="order-btn" href="https://wa.me/923435266919" onclick="orderProduct('HNK-LX-002')">Order on WhatsApp</a>
 </div>
 
 <div class="product">
@@ -407,8 +402,9 @@ footer{
 </div>
 <h3>Hublot Skeleton Premium Watch</h3>
 <p><strong>Product Code:</strong> HNK-LX-003</p>
+<div class="order-count" id="count-HNK-LX-003">Orders: 0</div>
 <div class="price"><del>PKR 5,000</del><br>PKR 4,399</div>
-<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
+<a class="order-btn" href="https://wa.me/923435266919" onclick="orderProduct('HNK-LX-003')">Order on WhatsApp</a>
 </div>
 
 <div class="product">
@@ -423,8 +419,9 @@ footer{
 </div>
 <h3>Arabic Aura Watch – Golden Edition</h3>
 <p><strong>Product Code:</strong> HNK-LX-004</p>
+<div class="order-count" id="count-HNK-LX-004">Orders: 0</div>
 <div class="price"><del>PKR 3,500</del><br>PKR 3,000</div>
-<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
+<a class="order-btn" href="https://wa.me/923435266919" onclick="orderProduct('HNK-LX-004')">Order on WhatsApp</a>
 </div>
 
 <div class="product">
@@ -437,36 +434,15 @@ footer{
 </div>
 <h3>Rolex Oyster Perpetual Datejust</h3>
 <p><strong>Product Code:</strong> HNK-LX-005</p>
+<div class="order-count" id="count-HNK-LX-005">Orders: 0</div>
 <div class="price"><del>PKR 3,500</del><br>PKR 3,000</div>
-<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
+<a class="order-btn" href="https://wa.me/923435266919" onclick="orderProduct('HNK-LX-005')">Order on WhatsApp</a>
 </div>
 
 </div>
 </section>
 
-<!-- ORDER FORM -->
-<section>
-<h2 class="section-title">Place Your Order</h2>
-<div class="form-box">
-<input id="cname" placeholder="Your Name">
-<input id="cphone" placeholder="Phone Number">
-<input id="caddress" placeholder="Delivery Address">
-<input id="ccolor" placeholder="Watch Colour">
-<button onclick="placeOrder()">Confirm Order</button>
-</div>
-</section>
-
-<!-- REVIEWS -->
-<section>
-<h2 class="section-title">Reviews & Issues</h2>
-<div class="form-box">
-<input id="rname" placeholder="Your Name">
-<textarea id="rtext" placeholder="Write your review or issue..."></textarea>
-<button onclick="addReview()">Submit</button>
-</div>
-<div id="reviews"></div>
-</section>
-
+<!-- PERFUMES -->
 <section>
 <h2 class="section-title">Perfumes</h2>
 <div style="text-align:center;font-size:2.5rem;font-weight:800;color:#e6c87b;">COMING SOON</div>
@@ -495,43 +471,36 @@ All Rights Reserved
 
 <script>
 /* HERO SLIDER */
-let index = 0;
-const track = document.getElementById("heroTrack");
-const totalSlides = document.querySelectorAll(".hero-slide").length;
-
-function update(){
-  track.style.transform = `translateX(-${index * 100}%)`;
-}
-function nextSlide(){ index=(index+1)%totalSlides; update(); }
-function prevSlide(){ index=(index-1+totalSlides)%totalSlides; update(); }
+let index=0;
+const track=document.getElementById("heroTrack");
+const totalSlides=document.querySelectorAll(".hero-slide").length;
+function update(){track.style.transform=`translateX(-${index*100}%)`;}
+function nextSlide(){index=(index+1)%totalSlides;update();}
+function prevSlide(){index=(index-1+totalSlides)%totalSlides;update();}
 setInterval(nextSlide,5000);
 
-/* ORDER COUNTER */
-let count = localStorage.getItem("hnkOrders") || 0;
-document.getElementById("orderCount").innerText = count;
+/* ORDER SYSTEM */
+let totalOrders=localStorage.getItem("hnkOrders")||0;
+document.getElementById("orderCount").innerText=totalOrders;
 
-function placeOrder(){
-  if(!cname.value||!cphone.value||!caddress.value||!ccolor.value){
-    alert("Please fill all fields");
-    return;
-  }
-  count++;
-  localStorage.setItem("hnkOrders",count);
-  orderCount.innerText = count;
-  alert("Order placed successfully!");
+function orderProduct(code){
+  let pc=localStorage.getItem(code)||0;
+  pc++;
+  localStorage.setItem(code,pc);
+  document.getElementById("count-"+code).innerText="Orders: "+pc;
+
+  totalOrders++;
+  localStorage.setItem("hnkOrders",totalOrders);
+  document.getElementById("orderCount").innerText=totalOrders;
 }
 
-/* REVIEWS */
-function addReview(){
-  if(!rtext.value) return;
-  const div=document.createElement("div");
-  div.className="review";
-  div.innerHTML=`<strong>${rname.value||"Customer"}:</strong><br>${rtext.value}`;
-  reviews.prepend(div);
-  rname.value=""; rtext.value="";
-}
+document.addEventListener("DOMContentLoaded",()=>{
+  document.querySelectorAll(".order-count").forEach(el=>{
+    const code=el.id.replace("count-","");
+    el.innerText="Orders: "+(localStorage.getItem(code)||0);
+  });
+});
 </script>
 
 </body>
 </html>
-
