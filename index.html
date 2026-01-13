@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HNK SSTORE | Watches & Perfumes</title>
 <meta name="description" content="HNK SSTORE – Trusted watch & perfume store in Pakistan. Nationwide delivery available.">
+
+<link rel="preload" as="image" href="thumnail.jpeg">
+<link rel="preload" as="image" href="thumnail2.jpeg">
+<link rel="preload" as="image" href="thumnail3.jpeg">
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -15,6 +18,10 @@ body{
   background:#000;
   color:#f0f0f0;
   overflow-x:hidden;
+}
+
+img{
+  content-visibility:auto;
 }
 
 /* ================= HEADER ================= */
@@ -79,7 +86,7 @@ header{
   object-fit:contain;
 }
 
-/* slider arrows */
+/* arrows */
 .hero-btn{
   position:absolute;
   top:50%;
@@ -136,11 +143,19 @@ section{
 .section-title{
   text-align:center;
   font-size:2.5rem;
-  margin-bottom:50px;
+  margin-bottom:20px;
   letter-spacing:3px;
   background:linear-gradient(90deg,#e6c87b,#bfa14a,#fff);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+}
+
+.section-desc{
+  max-width:900px;
+  margin:0 auto 50px;
+  text-align:center;
+  line-height:1.9;
+  color:#ddd;
 }
 
 /* ================= PRODUCTS ================= */
@@ -220,49 +235,6 @@ footer{
   color:#bfa14a;
   line-height:1.8;
 }
-
-/* ================= FLOATING ================= */
-.floating{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  z-index:9999;
-}
-.floating a{
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  font-size:26px;
-  color:#fff;
-}
-.whatsapp{background:#25D366;}
-.instagram{
-  background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
-}
-
-/* ================= MOBILE ================= */
-@media(max-width:768px){
-  header h1{font-size:2.4rem}
-  .hero-slider{height:220px}
-  .products{
-    display:flex;
-    overflow-x:auto;
-    gap:20px;
-    scroll-snap-type:x mandatory;
-  }
-  .product{
-    min-width:85%;
-    scroll-snap-align:center;
-  }
-  .products::-webkit-scrollbar{display:none;}
-}
 </style>
 </head>
 
@@ -273,12 +245,11 @@ footer{
   <div class="header-overlay"></div>
 
   <div class="header-content">
-
     <div class="hero-slider">
       <div class="hero-track" id="heroTrack">
-        <div class="hero-slide"><img src="thumnail.jpeg"></div>
-        <div class="hero-slide"><img src="thumnail3.jpeg"></div>
-        <div class="hero-slide"><img src="thumnail2.jpeg"></div>
+        <div class="hero-slide"><img src="thumnail.jpeg" loading="eager" decoding="async"></div>
+        <div class="hero-slide"><img src="thumnail3.jpeg" loading="eager" decoding="async"></div>
+        <div class="hero-slide"><img src="thumnail2.jpeg" loading="eager" decoding="async"></div>
       </div>
       <button class="hero-btn left" onclick="prevSlide()">❮</button>
       <button class="hero-btn right" onclick="nextSlide()">❯</button>
@@ -290,23 +261,26 @@ footer{
 
     <p>
       HNK SSTORE is a trusted online store in Pakistan providing premium watches and lifestyle products.
-      Each item is inspected before dispatch.
+      Each item is inspected, securely packed, and dispatched responsibly.
     </p>
 
     <p style="color:#e6c87b;letter-spacing:2px">
-      Watches • Perfumes • Nationwide Delivery • Cash on Delivery
+      Authentic Products • Quality Checked • Nationwide Delivery • Cash on Delivery
     </p>
-
   </div>
 </header>
 
 <!-- DAILY WATCHES -->
 <section>
 <h2 class="section-title">Daily Styling Watches</h2>
+<div class="section-desc">
+Affordable, stylish, and reliable watches designed for everyday use.
+</div>
+
 <div class="products">
 
 <div class="product">
-<img src="AURA FOR KIDS.jfif">
+<img src="AURA FOR KIDS.jfif" loading="lazy" decoding="async">
 <h3>Aura Watch – White</h3>
 <p><strong>Product Code:</strong> HNK-AURA-001</p>
 <div class="price">PKR 600</div>
@@ -315,10 +289,10 @@ footer{
 
 <div class="product">
 <div class="luxury-slider">
-<div class="luxury-slide"><img src="aura black (2).jpg"></div>
-<div class="luxury-slide"><img src="aura black (3).jpg"></div>
-<div class="luxury-slide"><img src="aura black (4).jpg"></div>
-<div class="luxury-slide"><img src="aura black (6).jpg"></div>
+<div class="luxury-slide"><img src="aura black (2).jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="aura black (3).jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="aura black (4).jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="aura black (6).jpg" loading="lazy" decoding="async"></div>
 </div>
 <h3>Arabic Aura Watch – Black</h3>
 <p><strong>Product Code:</strong> HNK-AURA-002</p>
@@ -326,13 +300,12 @@ footer{
 <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
 </div>
 
-<!-- 🔥 NEW PRODUCT (ONLY ADDITION) -->
 <div class="product">
 <div class="luxury-slider">
-<div class="luxury-slide"><img src="clyclr (1).jpg"></div>
-<div class="luxury-slide"><img src="clyclr (2).jpg"></div>
-<div class="luxury-slide"><img src="clyclr (3).jpg"></div>
-<div class="luxury-slide"><img src="clyclr (5).jpg"></div>
+<div class="luxury-slide"><img src="clyclr (1).jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="clyclr (2).jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="clyclr (3).jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="clyclr (5).jpg" loading="lazy" decoding="async"></div>
 </div>
 <h3>Rotating Rim Watch</h3>
 <p><strong>Quality:</strong> Stainless Steel & Chain</p>
@@ -346,13 +319,17 @@ footer{
 <!-- LUXURY WATCHES -->
 <section>
 <h2 class="section-title">Luxury Watches</h2>
+<div class="section-desc">
+Premium luxury watches selected for bold style and elegant finishing.
+</div>
+
 <div class="products">
 
 <div class="product">
 <div class="luxury-slider">
-<div class="luxury-slide"><img src="WATCH PPG.jpg"></div>
-<div class="luxury-slide"><img src="PPG 02.jpg"></div>
-<div class="luxury-slide"><img src="PPG BOX.jpg"></div>
+<div class="luxury-slide"><img src="WATCH PPG.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="PPG 02.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="PPG BOX.jpg" loading="lazy" decoding="async"></div>
 <div class="luxury-slide"><video controls src="PPG VID.MP4"></video></div>
 </div>
 <h3>Patek Philippe Nautilus</h3>
@@ -363,11 +340,11 @@ footer{
 
 <div class="product">
 <div class="luxury-slider">
-<div class="luxury-slide"><img src="hublet 1.jpg"></div>
-<div class="luxury-slide"><img src="hublet 2.jpg"></div>
-<div class="luxury-slide"><img src="hublet3.jpg"></div>
-<div class="luxury-slide"><img src="hublet 4.jpg"></div>
-<div class="luxury-slide"><img src="hublet box post.jpg"></div>
+<div class="luxury-slide"><img src="hublet 1.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="hublet 2.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="hublet3.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="hublet 4.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="hublet box post.jpg" loading="lazy" decoding="async"></div>
 </div>
 <h3>Hublot Skeleton Premium Watch</h3>
 <p><strong>Product Code:</strong> HNK-LX-003</p>
@@ -377,13 +354,13 @@ footer{
 
 <div class="product">
 <div class="luxury-slider">
-<div class="luxury-slide"><img src="golden aura .jpg"></div>
-<div class="luxury-slide"><img src="golden aura 3.jpg"></div>
-<div class="luxury-slide"><img src="golden aura 4.jpg"></div>
-<div class="luxury-slide"><img src="golden aura 5.jpg"></div>
-<div class="luxury-slide"><img src="golden aura.jpg"></div>
-<div class="luxury-slide"><img src="golder aura.jpg"></div>
-<div class="luxury-slide"><img src="golden 6.jpg"></div>
+<div class="luxury-slide"><img src="golden aura .jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="golden aura 3.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="golden aura 4.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="golden aura 5.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="golden aura.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="golder aura.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="golden 6.jpg" loading="lazy" decoding="async"></div>
 </div>
 <h3>Arabic Aura Watch – Golden Edition</h3>
 <p><strong>Product Code:</strong> HNK-LX-004</p>
@@ -393,11 +370,11 @@ footer{
 
 <div class="product">
 <div class="luxury-slider">
-<div class="luxury-slide"><img src="rolex gold red.jpg"></div>
-<div class="luxury-slide"><img src="rolex gold red2.jpg"></div>
-<div class="luxury-slide"><img src="rolex gold red3.jpg"></div>
-<div class="luxury-slide"><img src="rolex gold red4.jpg"></div>
-<div class="luxury-slide"><img src="rolex gold red05.jpg"></div>
+<div class="luxury-slide"><img src="rolex gold red.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="rolex gold red2.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="rolex gold red3.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="rolex gold red4.jpg" loading="lazy" decoding="async"></div>
+<div class="luxury-slide"><img src="rolex gold red05.jpg" loading="lazy" decoding="async"></div>
 </div>
 <h3>Rolex Oyster Perpetual Datejust</h3>
 <p><strong>Product Code:</strong> HNK-LX-005</p>
@@ -410,13 +387,16 @@ footer{
 
 <section>
 <h2 class="section-title">Perfumes</h2>
+<div class="section-desc">
+Premium fragrance collection coming soon.
+</div>
 <div style="text-align:center;font-size:2.5rem;font-weight:800;color:#e6c87b;">COMING SOON</div>
 </section>
 
 <section>
 <h2 class="section-title">Our Policies</h2>
 <div class="policies">
-✔ Nationwide Delivery<br>
+✔ Nationwide Delivery Across Pakistan<br>
 ✔ Cash on Delivery Available<br>
 ✔ Advance Delivery Charges Apply<br>
 ✔ Products Checked Before Dispatch<br>
@@ -424,15 +404,18 @@ footer{
 </div>
 </section>
 
+<section>
+<h2 class="section-title">Privacy Policy</h2>
+<div class="section-desc">
+HNK SSTORE respects customer privacy.
+All information is used only for order processing.
+</div>
+</section>
+
 <footer>
 © 2026 <strong>HNK SSTORE</strong><br>
 All Rights Reserved
 </footer>
-
-<div class="floating">
-<a class="whatsapp" href="https://wa.me/923435266919">🟢</a>
-<a class="instagram" href="https://instagram.com/hnk_sstore">📷</a>
-</div>
 
 <script>
 let index = 0;
@@ -442,22 +425,14 @@ const totalSlides = document.querySelectorAll(".hero-slide").length;
 function update(){
   track.style.transform = `translateX(-${index * 100}%)`;
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  index = 0;
-  update();
-});
-
 function nextSlide(){
   index = (index + 1) % totalSlides;
   update();
 }
-
 function prevSlide(){
   index = (index - 1 + totalSlides) % totalSlides;
   update();
 }
-
 setInterval(nextSlide, 5000);
 </script>
 
