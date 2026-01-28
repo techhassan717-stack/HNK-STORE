@@ -31,12 +31,12 @@ header h1{font-size:3.5rem;letter-spacing:6px;background:linear-gradient(90deg,#
 header p{margin-top:15px;line-height:1.8;color:#ddd}
 section{max-width:1200px;margin:auto;padding:90px 20px}
 .section-title{text-align:center;font-size:2.5rem;margin-bottom:20px;letter-spacing:3px;background:linear-gradient(90deg,#e6c87b,#bfa14a,#fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.section-desc{max-width:900px;margin:0 auto 50px;text-align:center;line-height:1.9;color:#ddd}
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:35px}
 .product{background:#fff;color:#000;border-radius:22px;padding:25px;text-align:center;box-shadow:0 18px 40px rgba(0,0,0,.25)}
 .img-placeholder{background:linear-gradient(110deg,#222 8%,#333 18%,#222 33%);background-size:200% 100%;animation:shimmer 1.5s linear infinite;border-radius:15px;aspect-ratio:1/1;overflow:hidden}
 @keyframes shimmer{to{background-position-x:-200%}}
-.product img,.luxury-slide img,.luxury-slide video{width:100%;height:260px;object-fit:contain;background:#000;border-radius:15px;padding:10px}
+.product img,.luxury-slide img,.luxury-slide video{width:100%;height:260px;object-fit:contain;background:#000;border-radius:15px;padding:10px;opacity:0;transition:opacity 0.4s ease-in}
+img.loaded{opacity:1}
 .price{color:#bfa14a;font-weight:800;margin:12px 0;font-size:1.2rem}
 .order-btn{display:inline-block;margin-top:10px;padding:12px 26px;background:#25D366;color:#000;text-decoration:none;border-radius:25px;font-weight:700}
 .luxury-slider{display:flex;overflow-x:auto;gap:15px;scroll-snap-type:x mandatory;margin-bottom:15px}
@@ -68,9 +68,9 @@ header h1{font-size:2.4rem}
 <div class="header-content">
 <div class="hero-slider">
 <div class="hero-track" id="heroTrack">
-<div class="hero-slide"><img src="thumnail.jpeg" fetchpriority="high" decoding="async"></div>
-<div class="hero-slide"><img src="thumnail3.jpeg" loading="lazy"></div>
-<div class="hero-slide"><img src="thumnail2.jpeg" loading="lazy"></div>
+<div class="hero-slide"><img src="thumnail.jpeg" fetchpriority="high" class="loaded"></div>
+<div class="hero-slide"><img data-src="thumnail3.jpeg" class="lazy"></div>
+<div class="hero-slide"><img data-src="thumnail2.jpeg" class="lazy"></div>
 </div>
 <button class="hero-btn left" onclick="prevSlide()">❮</button>
 <button class="hero-btn right" onclick="nextSlide()">❯</button>
@@ -78,150 +78,146 @@ header h1{font-size:2.4rem}
 <div class="welcome">WELCOME TO HNK SSTORE</div>
 <h1>HNK SSTORE</h1>
 <div class="launch">🎉 Successfully Launched</div>
-<p>HNK SSTORE is a trusted online store in Pakistan providing premium watches and lifestyle products. Each item is inspected, securely packed, and dispatched responsibly.</p>
-<p style="color:#e6c87b;letter-spacing:2px">Authentic Products • Quality Checked • Nationwide Delivery • Cash on Delivery</p>
+<p>HNK SSTORE is a trusted online store in Pakistan providing premium watches and lifestyle products.</p>
+<p style="color:#e6c87b;letter-spacing:2px">Authentic Products • Quality Checked • Nationwide Delivery</p>
 </div>
 </header>
+
 <section id="daily">
 <h2 class="section-title">Daily Styling Watches</h2>
-<div class="section-desc">Affordable, stylish, and reliable watches designed for everyday use.</div>
 <div class="products">
 <div class="product">
-<div class="img-placeholder"><img src="AURA FOR KIDS.jfif" loading="lazy" onload="this.parentElement.style.animation='none'"></div>
+<div class="img-placeholder"><img data-src="AURA FOR KIDS.jfif" class="lazy"></div>
 <h3>Aura Watch – White</h3>
-<p><strong>Product Code:</strong> HNK-AURA-001</p>
+<p><strong>Code:</strong> HNK-AURA-001</p>
 <div class="price">PKR 600</div>
 <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
 </div>
 <div class="product">
-<div class="img-placeholder"><img src="magnet_lock.jpg" loading="lazy" onload="this.parentElement.style.animation='none'"></div>
+<div class="img-placeholder"><img data-src="magnet_lock.jpg" class="lazy"></div>
 <h3>Magnet Lock Watch</h3>
-<p><strong>Product Code:</strong> HNK-MAG-001</p>
+<p><strong>Code:</strong> HNK-MAG-001</p>
 <div class="price">PKR 1,000</div>
 <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
 </div>
 <div class="product">
 <div class="luxury-slider">
-<div class="luxury-slide"><img src="aura black (3) (1).webp" loading="lazy"></div>
-<div class="luxury-slide"><img src="aura black (3).jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="aura black (4).jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="aura black (6).jpg" loading="lazy"></div>
+<div class="luxury-slide"><img data-src="aura black (3) (1).webp" class="lazy"></div>
+<div class="luxury-slide"><img data-src="aura black (3).jpg" class="lazy"></div>
+<div class="luxury-slide"><img data-src="aura black (4).jpg" class="lazy"></div>
+<div class="luxury-slide"><img data-src="aura black (6).jpg" class="lazy"></div>
 </div>
 <h3>Arabic Aura Watch – Black</h3>
-<p><strong>Product Code:</strong> HNK-AURA-002</p>
 <div class="price"><del>PKR 3,000</del><br>PKR 2,499</div>
 <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
 </div>
 <div class="product">
 <div class="luxury-slider">
-<div class="luxury-slide"><img src="clyclr (3) (1).webp" loading="lazy"></div>
-<div class="luxury-slide"><img src="clyclr (2).jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="clyclr (5).jpg" loading="lazy"></div>
+<div class="luxury-slide"><img data-src="clyclr (3) (1).webp" class="lazy"></div>
+<div class="luxury-slide"><img data-src="clyclr (2).jpg" class="lazy"></div>
+<div class="luxury-slide"><img data-src="clyclr (5).jpg" class="lazy"></div>
 </div>
 <h3>Rotating Rim Watch</h3>
-<p><strong>Quality:</strong> Stainless Steel & Chain</p>
 <div class="price"><del>PKR 3,000</del><br>PKR 2,499</div>
 <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
 </div>
 </div>
 </section>
+
 <section id="luxury">
 <h2 class="section-title">Luxury Watches</h2>
-<div class="section-desc">Premium luxury watches selected for bold style and elegant finishing.</div>
 <div class="products">
 <div class="product">
 <div class="luxury-slider">
-<div class="luxury-slide"><img src="WATCH PPG.jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="PPG 02.jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="PPG BOX.jpg" loading="lazy"></div>
+<div class="luxury-slide"><img data-src="WATCH PPG.jpg" class="lazy"></div>
+<div class="luxury-slide"><img data-src="PPG 02.jpg" class="lazy"></div>
+<div class="luxury-slide"><img data-src="PPG BOX.jpg" class="lazy"></div>
 <div class="luxury-slide"><video controls preload="none" src="PPG VID.MP4" poster="WATCH PPG.jpg"></video></div>
 </div>
 <h3>Patek Philippe Nautilus</h3>
-<p><strong>Product Code:</strong> HNK-LX-002</p>
 <div class="price"><del>PKR 4,000</del><br>PKR 3,499</div>
 <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
 </div>
 <div class="product">
 <div class="luxury-slider">
-<div class="luxury-slide"><img src="hublet 1.jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="hublet 2.jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="hublet3.jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="hublet 4.jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="hublet box post.jpg" loading="lazy"></div>
+<div class="luxury-slide"><img data-src="hublet 1.jpg" class="lazy"></div>
+<div class="luxury-slide"><img data-src="hublet 2.jpg" class="lazy"></div>
+<div class="luxury-slide"><img data-src="hublet3.jpg" class="lazy"></div>
+<div class="luxury-slide"><img data-src="hublet 4.jpg" class="lazy"></div>
+<div class="luxury-slide"><img data-src="hublet box post.jpg" class="lazy"></div>
 </div>
-<h3>Hublot Skeleton Premium Watch</h3>
-<p><strong>Product Code:</strong> HNK-LX-003</p>
+<h3>Hublot Skeleton Watch</h3>
 <div class="price"><del>PKR 5,000</del><br>PKR 4,399</div>
 <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
 </div>
 <div class="product">
-<div class="luxury-slider">
-<div class="luxury-slide"><img src="golden aura 3.webp" loading="lazy"></div>
-<div class="luxury-slide"><img src="golden aura 4.jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="golden aura 5.jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="golden aura.jpg" loading="lazy"></div>
+<div class="img-placeholder"><img data-src="x_gear.jpg" class="lazy"></div>
+<h3>X Gear Luxury Watch</h3>
+<div class="price"><del>PKR 6,000</del><br>PKR 5,499</div>
+<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
 </div>
-<h3>Arabic Aura Watch – Golden Edition</h3>
-<p><strong>Product Code:</strong> HNK-LX-004</p>
+<div class="product">
+<div class="luxury-slider">
+<div class="luxury-slide"><img data-src="golden aura 3.webp" class="lazy"></div>
+<div class="luxury-slide"><img data-src="golden aura 4.jpg" class="lazy"></div>
+<div class="luxury-slide"><img data-src="golden aura 5.jpg" class="lazy"></div>
+<div class="luxury-slide"><img data-src="golden aura.jpg" class="lazy"></div>
+</div>
+<h3>Arabic Aura – Gold Edition</h3>
 <div class="price"><del>PKR 3,500</del><br>PKR 3,000</div>
 <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
 </div>
 <div class="product">
 <div class="luxury-slider">
-<div class="luxury-slide"><img src="rolex gold red.webp" loading="lazy"></div>
-<div class="luxury-slide"><img src="rolex gold red2.jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="rolex gold red3.jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="rolex gold red4.jpg" loading="lazy"></div>
+<div class="luxury-slide"><img data-src="rolex gold red.webp" class="lazy"></div>
+<div class="luxury-slide"><img data-src="rolex gold red2.jpg" class="lazy"></div>
+<div class="luxury-slide"><img data-src="rolex gold red3.jpg" class="lazy"></div>
+<div class="luxury-slide"><img data-src="rolex gold red4.jpg" class="lazy"></div>
 </div>
-<h3>Rolex Oyster Perpetual Datejust</h3>
-<p><strong>Product Code:</strong> HNK-LX-005</p>
+<h3>Rolex Oyster Perpetual</h3>
 <div class="price"><del>PKR 3,500</del><br>PKR 3,000</div>
 <a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
 </div>
-<div class="product">
-<div class="luxury-slider">
-<div class="luxury-slide"><img src="jco (7).webp" loading="lazy"></div>
-<div class="luxury-slide"><img src="jco (2).jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="jco (3).jpg" loading="lazy"></div>
-<div class="luxury-slide"><img src="jco (4).jpg" loading="lazy"></div>
-</div>
-<h3>Jacos&Co Leather Watch</h3>
-<p><strong>Product Code:</strong> HNK-LX-006</p>
-<div class="price">PKR 2,800</div>
-<a class="order-btn" href="https://wa.me/923435266919">Order on WhatsApp</a>
-</div>
 </div>
 </section>
-<section id="perfumes">
-<h2 class="section-title">Perfumes</h2>
-<div class="section-desc">Premium fragrance collection coming soon.</div>
-<div style="text-align:center;font-size:2.5rem;font-weight:800;color:#e6c87b;">COMING SOON</div>
-</section>
+
 <section id="policies">
-<h2 class="section-title">Our Policies</h2>
-<div class="policies">
-✔ Nationwide Delivery Across Pakistan<br>
-✔ Cash on Delivery Available<br>
-✔ Advance Delivery Charges Apply<br>
-✔ Products Checked Before Dispatch<br>
-✔ Customer Satisfaction Guaranteed
-</div>
+<h2 class="section-title">Policies</h2>
+<div class="policies">✔ Nationwide Delivery • Cash on Delivery • Checked Before Dispatch</div>
 </section>
-<section id="privacy">
-<h2 class="section-title">Privacy Policy</h2>
-<div class="section-desc">HNK SSTORE respects customer privacy. All information is used only for order processing.</div>
-</section>
-<footer>© 2026 <strong>HNK SSTORE</strong><br>All Rights Reserved</footer>
+
+<footer>© 2026 <strong>HNK SSTORE</strong></footer>
+
 <script>
 let index=0;
 const track=document.getElementById("heroTrack");
 const slides=document.querySelectorAll(".hero-slide");
-const totalSlides=slides.length;
 function update(){track.style.transform=`translateX(-${index*100}%)`;}
-function nextSlide(){index=(index+1)%totalSlides;update();}
-function prevSlide(){index=(index-1+totalSlides)%totalSlides;update();}
+function nextSlide(){index=(index+1)%slides.length;update();}
+function prevSlide(){index=(index-1+slides.length)%slides.length;update();}
 setInterval(nextSlide,5000);
 function toggleMenu(){document.getElementById("mobileNav").classList.toggle("show");}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const lazyImages = document.querySelectorAll('img.lazy');
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.onload = () => {
+          img.classList.add('loaded');
+          if(img.parentElement.classList.contains('img-placeholder')) {
+            img.parentElement.style.animation = 'none';
+            img.parentElement.style.background = 'none';
+          }
+        };
+        obs.unobserve(img);
+      }
+    });
+  }, { threshold: 0.1 });
+  lazyImages.forEach(img => observer.observe(img));
+});
 </script>
 </body>
 </html>
